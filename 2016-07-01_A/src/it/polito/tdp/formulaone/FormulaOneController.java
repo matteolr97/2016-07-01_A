@@ -3,6 +3,7 @@ package it.polito.tdp.formulaone;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import it.polito.tdp.formulaone.model.Driver;
 import it.polito.tdp.formulaone.model.Model;
 import it.polito.tdp.formulaone.model.Season;
 import javafx.event.ActionEvent;
@@ -32,8 +33,18 @@ public class FormulaOneController {
 
     @FXML
     void doCreaGrafo(ActionEvent event) {
+    	
 
-    }
+			Season s = boxAnno.getValue();
+			
+			
+
+				model.creaGrafo(s);
+			Driver d = model.getBestDriver();
+			txtResult.appendText(d.toString());
+			}
+
+	
 
     @FXML
     void doTrovaDreamTeam(ActionEvent event) {

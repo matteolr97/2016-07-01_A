@@ -14,6 +14,13 @@ public class Driver {
 	private String nationality;
 	private String url;
 
+	public Driver(int driverId, String forename, String surname) {
+		super();
+		this.driverId = driverId;
+		this.forename = forename;
+		this.surname = surname;
+	}
+
 	public Driver(int driverId, String driverRef, int number, String code, String forename, String surname,
 			LocalDate dob, String nationality, String url) {
 		super();
@@ -30,6 +37,13 @@ public class Driver {
 
 	public int getDriverId() {
 		return driverId;
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"Driver [driverId=%s, driverRef=%s, number=%s, code=%s, forename=%s, surname=%s, dob=%s, nationality=%s, url=%s]",
+				driverId, driverRef, number, code, forename, surname, dob, nationality, url);
 	}
 
 	public void setDriverId(int driverId) {
