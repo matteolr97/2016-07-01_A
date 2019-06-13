@@ -139,7 +139,7 @@ public class FormulaOneDAO {
 			return drivers;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("SQL Query Error");
+			throw new     RuntimeException("SQL Query Error");
 		}
 	}
 
