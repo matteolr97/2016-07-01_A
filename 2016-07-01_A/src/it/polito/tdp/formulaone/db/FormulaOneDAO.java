@@ -116,6 +116,7 @@ public class FormulaOneDAO {
 
 	public List<Driver> getAllDriversBySeason(Season s, DriverIdMap driverIdMap) {
 		
+		
 		String sql = "Select DISTINCT drivers.driverId, forename, surname\n" + 
 				"from drivers, races, results\n" + 
 				"where races.year = ?\n" + 
@@ -126,7 +127,7 @@ public class FormulaOneDAO {
 		try {
 			Connection conn = ConnectDB.getConnection();
 			PreparedStatement st = conn.prepareStatement(sql);
-			st.setInt(1, s.getYear());
+			st.setInt(  1, s.getYear());
 			ResultSet rs = st.executeQuery();
 
 			List<Driver> drivers = new ArrayList<>();
