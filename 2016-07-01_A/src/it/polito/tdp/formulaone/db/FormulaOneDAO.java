@@ -10,6 +10,7 @@ import java.util.List;
 
 import it.polito.tdp.formulaone.model.Circuit;
 import it.polito.tdp.formulaone.model.Constructor;
+import it.polito.tdp.formulaone.model.Driver;
 import it.polito.tdp.formulaone.model.Season;
 
 
@@ -106,6 +107,28 @@ public class FormulaOneDAO {
 
 			conn.close();
 			return constructors;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("SQL Query Error");
+		}
+	}
+	public List<Driver> getAllDrivers(Season season){
+		String sql = "SELECT constructorId, name FROM constructors ORDER BY name";
+
+		try {
+			Connection conn = ConnectDB.getConnection();
+
+			PreparedStatement st = conn.prepareStatement(sql);
+			st.setYear(1,season)
+			ResultSet rs = st.executeQuery();
+
+			List<Driver> drivers = new ArrayList<>();
+			while (rs.next()) {
+				
+			}
+
+			conn.close();
+			return drivers;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("SQL Query Error");
