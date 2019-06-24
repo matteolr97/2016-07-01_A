@@ -31,7 +31,7 @@ public class Model {
 	}
 	
 	public List<Season> getSeason(){
-		return dao.getAllSeasons();
+		return dao.getAllSeasons() ;
 	}
 	public Driver getBestDriver() {
 		Driver bestDriver = null;
